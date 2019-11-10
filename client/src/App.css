@@ -1,0 +1,58 @@
+:root {
+  --background: rgb(27, 29, 41);
+  --primary: rgb(247, 62, 120);
+  --secondary: rgb(26, 227, 233);
+}
+
+@font-face {
+  font-family: 'heading-font';
+  src: url(assets/MaculaSolid.otf);
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'heading-font';
+}
+
+h1 {
+  color: var(--primary);
+  font-weight: 100;
+  font-size: 7rem;
+}
+
+body {
+  background-color: var(--background);
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+div, button {
+  margin: 10px;
+}
