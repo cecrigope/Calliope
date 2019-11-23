@@ -1,7 +1,7 @@
-# calliope
+# CALLIOPE
 
 ## Getting Started
-1) Spotify API
+### Spotify API
 - Visit https://developer.spotift.com/
 - Go to DASHBOARD and login
 - Click on CREATE A CLIENT ID
@@ -16,7 +16,7 @@
   - Save
 - Save your Client ID, Client Secret and Redirect URI (you'll need it later)
 
-2) Start Auth Sever
+### Start Auth Sever
 - Go to the AUTH-SERVER directory
 - Run npm install .
 - Create a "env.js" file in side the auth-server directory
@@ -25,10 +25,10 @@
   - module.exports.redirect_uri = "YOUR REDIRECT URI GOES HERE";
 - Run node app inside the auth-server directory
 
-3) Start Client
+### Start Client
 - Go to the CLIENT directory
 - Run npm install .
 - Run npm start
 
-4) Run application
+### Run application
 - Visit http://localhost:3000
