@@ -1,62 +1,33 @@
-import React, { Component } from "react";
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+// import SpotifyAPI from "spotify-web-api-js";
+
+import { getHashParams } from "./hash";
+import AuthRoute from "./AuthRoute";
+
 import "./App.css";
 
-import SpotifyWebApi from "spotify-web-api-js";
-const spotifyApi = new SpotifyWebApi();
+import MenuBar from "./components/MenuBar";
+import Home from "./pages/Home";
+import UserProfile from "./pages/UserProfile";
 
-class App extends Component {
-  constructor() {
-    super();
-    const params = this.getHashParams();
-    const token = params.access_token;
-    if (token) {
-      spotifyApi.setAccessToken(token);
-    }
-    this.state = {
-      loggedIn: token ? true : false,
-      nowPlaying: { name: "Not Checked", albumArt: "" }
-    };
-  }
-  getHashParams() {
-    var hashParams = {};
-    var e,
-      r = /([^&;=]+)=?([^&;]*)/g,
-      q = window.location.hash.substring(1);
-    e = r.exec(q);
-    while (e) {
-      hashParams[e[1]] = decodeURIComponent(e[2]);
-      e = r.exec(q);
-    }
-    return hashParams;
-  }
+function App() {
+  const params = getHashParams();
+  const token = params.access_token;
 
-  getNowPlaying() {
-    spotifyApi.getMyCurrentPlaybackState().then(response => {
-      this.setState({
-        nowPlaying: {
-          name: response.item.name,
-          albumArt: response.item.album.images[0].url
-        }
-      });
-    });
+  if (token) {
+    window.localStorage.setItem("spotifyToken", token);
   }
-  render() {
-    return (
-      <div className="App">
-        <h1>Calliope</h1>
-        <a href="http://localhost:8888"> Login to Spotify </a>
-        <div>Now Playing: {this.state.nowPlaying.name}</div>
-        <div>
-          <img src={this.state.nowPlaying.albumArt} style={{ height: 150 }} />
-        </div>
-        {this.state.loggedIn && (
-          <button onClick={() => this.getNowPlaying()}>
-            Check Now Playing
-          </button>
-        )}
-      </div>
-    );
-  }
+  
+  return (
+    <div className="App">
+      <Router>
+        <MenuBar />
+        <Route exact path="/" component={Home} />
+        <AuthRoute exact path="/myprofile" component={UserProfile} />
+      </Router>
+    </div>
+  );
 }
 
 export default App;

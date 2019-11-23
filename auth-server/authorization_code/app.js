@@ -17,6 +17,10 @@ var client_id = (env.client_id || process.env.client_id); // Your client id
 var client_secret = (env.client_secret || process.env.client_secret); // Your secret
 var redirect_uri = (env.redirect_uri || process.env.redirect_uri); // Or Your redirect uri
 
+console.log(client_id);
+console.log(client_secret);
+console.log(redirect_uri);
+
 /**
  * Generates a random string containing numbers and letters
  * @param  {number} length The length of the string

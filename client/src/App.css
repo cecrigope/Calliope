@@ -1,58 +1,90 @@
 :root {
-  --background: rgb(27, 29, 41);
-  --primary: rgb(247, 62, 120);
-  --secondary: rgb(26, 227, 233);
+  --navbar: rgb(250, 250, 250);
+  --background: rgb(230, 230, 230);
+  --text: rgb(40, 40, 40);
+  --primary: rgb(240, 0, 140);
+  --primary-overlay: rgba(237, 0, 140, 0.4);
+  --secondary: rgb(14, 190, 255);
+  --secondary-overlay: rgba(14, 190, 255, 0.4);
 }
 
 @font-face {
   font-family: 'heading-font';
-  src: url(assets/MaculaSolid.otf);
+  src: url(assets/LoveloLineBold.otf);
 }
 
-h1, h2, h3, h4, h5 {
-  font-family: 'heading-font';
+@font-face {
+  font-family: 'body-font';
+  src: url(assets/SanFranciscoRegular.ttf);
 }
 
-h1 {
-  color: var(--primary);
-  font-weight: 100;
-  font-size: 7rem;
+* {
+  color: var(--text);
+  font-family: "body-font";
 }
 
 body {
   background-color: var(--background);
 }
 
-.App {
-  text-align: center;
+h1, h2, h3, h4, h5 {
+  color: var(--primary) !important;
+  font-family: 'heading-font' !important;
+  text-transform: uppercase;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.navbar {
+  color: var(--text) !important;
+  background-color: var(--navbar);
+  /* padding: 0rem 0rem; */
+
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.navbar-brand {
+  color: var(--primary) !important;
+  font-family: "heading-font";
+  text-transform: uppercase;
+  font-size: 2rem;
+  padding: 0px;
 }
 
-.App-title {
-  font-size: 1.5em;
+.user-displayname {
+  color: var(--text);
 }
 
-.App-intro {
-  font-size: large;
+.user-displayname:hover {
+  color: var(--primary);
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.headline {
+  height: 500px;
+  background: url("assets/home.jpg");
+  background-position: 50% 50% !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
 }
 
+.headline-mask {
+  padding: 16px 0px;
+}
 
-div, button {
-  margin: 10px;
+.rgba-black-strong {
+  background-color: var(--primary-overlay);
+}
+
+.what {
+  padding: 16px 0px;
+}
+
+@media (max-width: 767px) {
+  .nav-item {
+    padding: 8px 0px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .nav-item {
+    padding: 8px 16px !important;
+  }
 }
