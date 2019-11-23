@@ -23,7 +23,6 @@ function MenuBar() {
     var spotify = new SpotifyAPI();
     spotify.setAccessToken(token);
     spotify.getMe(function(err, data) {
-      console.log(data);
       setUser(data);
     });
   }
@@ -47,9 +46,11 @@ function MenuBar() {
           </MDBNavbarBrand>
           <MDBNavbarToggler onClick={() => handleCollapse()} />
           <MDBCollapse isOpen={collapse} navbar>
-            {token !== "undefined" ? (
+            {token !== "undefined" && user ? (
               <MDBNavbarNav right>
+                {/*
                 <MDBNavItem onClick={() => logout()}>Logout</MDBNavItem>
+                */}
                 <a href="/myprofile">
                   <MDBNavItem>Welcome, {user.display_name}</MDBNavItem>
                 </a>
