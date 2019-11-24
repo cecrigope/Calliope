@@ -4,7 +4,6 @@ import { getHashParams } from "./hash";
 
 function AuthRoute({ component: Component, ...rest}) {
   var token = window.localStorage.getItem("spotifyToken");
-  console.log(token);
 
   return (
     <Route
