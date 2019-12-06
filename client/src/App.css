@@ -4,13 +4,11 @@
   --text: rgb(40, 40, 40);
   --primary: rgb(240, 0, 140);
   --primary-overlay: rgba(237, 0, 140, 0.4);
-  --secondary: rgb(14, 190, 255);
-  --secondary-overlay: rgba(14, 190, 255, 0.4);
 }
 
 @font-face {
   font-family: "heading-font";
-  src: url(assets/LoveloLineBold.otf);
+  src: url(assets/TradeGothic.ttf);
 }
 
 @font-face {
@@ -39,6 +37,11 @@ h5 {
   color: var(--primary) !important;
   font-family: "heading-font" !important;
   text-transform: uppercase;
+}
+
+.body-text {
+  font-family: "body-font" !important;
+  text-transform: none;
 }
 
 .navbar {
@@ -93,6 +96,12 @@ h5 {
   height: 360px;
 }
 
+.artist-bg {
+  object-fit: cover;
+  width: 100%;
+  height: 500px;
+}
+
 .no-margin {
   margin: 0px !important;
 }
@@ -105,6 +114,23 @@ h5 {
   background-color: var(--primary-overlay) !important;
   width: 100% !important;
   height: 100% !important;
+}
+
+.jumbotron {
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.jumbotron-title {
+  margin-bottom: 16px;
+}
+
+.jumbotron-rating {
+  margin-bottom: 30px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: var(--primary);
+  border-radius: 8px;
 }
 
 @media (max-width: 767px) {

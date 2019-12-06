@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "last-fm": "^5.2.2",
+    "lodash": "^4.17.15",
     "mdbreact": "^4.22.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",

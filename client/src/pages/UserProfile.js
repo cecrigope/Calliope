@@ -30,7 +30,7 @@ function UserProfile() {
 
     var options = {
       time_range: "long_term",
-      limit: 9
+      limit: 50
     };
 
     if (artists === false) {
@@ -55,7 +55,9 @@ function UserProfile() {
     setOpenModal(value);
   }
 
-  console.log(artist);
+  function handleArtistProfile(artistId) {
+    window.location.href = "/artistprofile/" + artistId;
+  }
 
   return (
     <div className="body">
@@ -66,9 +68,11 @@ function UserProfile() {
               <MDBCol className="artist-card" size={4} key={artist.id}>
                 <MDBCard
                   className="z-depth-1"
-                  onClick={() => handleModal(true, artist)}
+                  onClick={() => handleArtistProfile(artist.id)}
                 >
                   <MDBCardImage
+                    hoover
+                    zoom
                     className="img-fluid artist-img"
                     src={artist.images[0].url}
                     waves
@@ -94,6 +98,7 @@ function UserProfile() {
             ))}
         </MDBRow>
       </MDBContainer>
+      {/*
       <MDBModal isOpen={openModal} size="lg" centered>
         <MDBModalBody className="no-padding">
           {artist && (
@@ -124,6 +129,7 @@ function UserProfile() {
           </MDBBtn>
         </MDBModalFooter>
       </MDBModal>
+*/}
     </div>
   );
 }
