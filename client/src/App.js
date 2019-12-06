@@ -8,7 +8,8 @@ import "./App.css";
 
 import MenuBar from "./components/MenuBar";
 import Home from "./pages/Home";
-import UserProfile from "./pages/UserProfile";
+import TopArtists from "./pages/TopArtists";
+import TopTracks from "./pages/TopTracks";
 import ArtistProfile from "./pages/ArtistProfile";
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
 
   if (token) {
     window.localStorage.setItem("spotifyToken", token);
-    window.location.replace("/myprofile");
+    window.location.replace("/topartists");
   }
 
   return (
@@ -25,7 +26,8 @@ function App() {
       <Router>
         <MenuBar />
         <Route exact path="/" component={Home} />
-        <AuthRoute exact path="/myprofile" component={UserProfile} />
+        <AuthRoute exact path="/topartists" component={TopArtists} />
+        <AuthRoute exact path="/toptracks" component={TopTracks} />
         <AuthRoute exact path="/artistprofile/:id" component={ArtistProfile} />
       </Router>
     </div>

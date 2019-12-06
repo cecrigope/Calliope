@@ -96,8 +96,10 @@ function ArtistProfile() {
     }
   }
 
-  console.log(stats);
-
+  function handleArtistProfile(artistId) {
+    window.location.href = "/artistprofile/" + artistId;
+  }
+  
   return (
     <div>
       {artistData && lastFMData && topTracksData && stats && (

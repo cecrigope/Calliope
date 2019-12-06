@@ -48,23 +48,23 @@ function MenuBar() {
           <MDBCollapse isOpen={collapse} navbar>
             {token !== "undefined" && user ? (
               <MDBNavbarNav right>
-                {/*
-                <MDBNavItem onClick={() => logout()}>Logout</MDBNavItem>
-                */}
-                <a href="/myprofile">
-                  <MDBNavItem>Welcome, {user.display_name}</MDBNavItem>
+                <MDBNavItem>
+                <a className="nav-btn" href="/topartists">
+                  My Top Artists
                 </a>
+                </MDBNavItem>
+                <MDBNavItem>
+                <a className="nav-btn" href="/toptracks">
+                  My Top Tracks
+                </a>
+                </MDBNavItem>
               </MDBNavbarNav>
             ) : (
               <MDBNavbarNav right>
                 <MDBNavItem>
-                  <MDBBtn
-                    color="primary"
-                    className="z-depth-0"
-                    href="http://localhost:8888"
-                  >
-                    Get Started
-                  </MDBBtn>
+                  <a className="nav-btn" href="http://www.localhost:8888">
+                    Getting Started
+                  </a>
                 </MDBNavItem>
               </MDBNavbarNav>
             )}

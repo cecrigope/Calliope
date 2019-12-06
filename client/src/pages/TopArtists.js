@@ -15,12 +15,10 @@ import {
   MDBModalFooter
 } from "mdbreact";
 import SpotifyAPI from "spotify-web-api-js";
-import LastFM from "last-fm";
 
-function UserProfile() {
+function TopArtists() {
   const [openModal, setOpenModal] = useState(false);
   const [artists, setArtists] = useState(false);
-  const [artist, setArtist] = useState(false);
 
   var token = window.localStorage.getItem("spotifyToken");
 
@@ -40,21 +38,6 @@ function UserProfile() {
     }
   }
 
-  function handleModal(value, artistInfo) {
-    if (value) {
-      const lastfm = new LastFM("ac4f3251f9926f343c4fe14f0ef33a41");
-      lastfm.artistInfo({ name: artistInfo.name }, function(err, data) {
-        data.picture = artistInfo.images[0].url;
-        console.log(data);
-        setArtist(data);
-      });
-    } else {
-      setArtist(false);
-    }
-
-    setOpenModal(value);
-  }
-
   function handleArtistProfile(artistId) {
     window.location.href = "/artistprofile/" + artistId;
   }
@@ -63,9 +46,14 @@ function UserProfile() {
     <div className="body">
       <MDBContainer>
         <MDBRow>
+          <MDBCol>
+            <h1 style={{ marginBottom: 16 }}>My Top Artists</h1>
+          </MDBCol>
+        </MDBRow>
+        <MDBRow>
           {artists &&
             artists.map(artist => (
-              <MDBCol className="artist-card" size={4} key={artist.id}>
+              <MDBCol className="artist-card d-flex align-items-stretch" md={4} sm={12} key={artist.id}>
                 <MDBCard
                   className="z-depth-1"
                   onClick={() => handleArtistProfile(artist.id)}
@@ -79,7 +67,7 @@ function UserProfile() {
                   />
                   <MDBCardBody>
                     <MDBCardTitle>
-                      <h1>{artist.name}</h1>
+                      <h2>{artist.name}</h2>
                     </MDBCardTitle>
                     <MDBCardText>
                       <p className="no-margin">
@@ -98,40 +86,8 @@ function UserProfile() {
             ))}
         </MDBRow>
       </MDBContainer>
-      {/*
-      <MDBModal isOpen={openModal} size="lg" centered>
-        <MDBModalBody className="no-padding">
-          {artist && (
-            <div
-              style={{
-                backgroundImage: `url(${artist.picture})`,
-                width: `100%`,
-                height: `800px`,
-                backgroundRepeat: `no-repeat`,
-                backgroundSize: `cover`,
-                backgroundPosition: `50% 50%`
-              }}
-            >
-              <div className="overlay" style={{ padding: `32px` }}>
-                <h1 className="display-4 white-text">{artist.name}</h1>
-                <p className="white-text">{artist.summary}</p>
-              </div>
-            </div>
-          )}
-        </MDBModalBody>
-        <MDBModalFooter>
-          <MDBBtn
-            className="no-margin"
-            color="primary"
-            onClick={() => handleModal(false, "")}
-          >
-            Close
-          </MDBBtn>
-        </MDBModalFooter>
-      </MDBModal>
-*/}
     </div>
   );
 }
 
-export default UserProfile;
+export default TopArtists;

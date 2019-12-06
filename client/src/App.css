@@ -1,6 +1,6 @@
 :root {
   --navbar: rgb(250, 250, 250);
-  --background: rgb(230, 230, 230);
+  --background: rgb(240, 240, 240);
   --text: rgb(40, 40, 40);
   --primary: rgb(240, 0, 140);
   --primary-overlay: rgba(237, 0, 140, 0.4);
@@ -26,7 +26,7 @@ body {
 }
 
 .body {
-  padding-top: 32px !important;
+  padding-top: 16px !important;
 }
 
 h1,
@@ -131,6 +131,29 @@ h5 {
   border-width: 3px;
   border-color: var(--primary);
   border-radius: 8px;
+}
+
+.jumbotron-track {
+  padding: 0px;
+}
+
+.nav-btn {
+  padding: 12px;
+  border: 0px;
+  border-radius: 8px;
+  background-color: var(--primary);
+  color: rgb(255, 255, 255);
+}
+
+.nav-btn:hover {
+  color: rgb(255, 255, 255);
+}
+
+li.nav-item {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
 }
 
 @media (max-width: 767px) {
