@@ -7,9 +7,11 @@ import AuthRoute from "./AuthRoute";
 import "./App.css";
 
 import MenuBar from "./components/MenuBar";
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import TopArtists from "./pages/TopArtists";
 import TopTracks from "./pages/TopTracks";
+import MusicProfile from "./pages/MusicProfile";
 import ArtistProfile from "./pages/ArtistProfile";
 
 function App() {
@@ -28,7 +30,9 @@ function App() {
         <Route exact path="/" component={Home} />
         <AuthRoute exact path="/topartists" component={TopArtists} />
         <AuthRoute exact path="/toptracks" component={TopTracks} />
+        <AuthRoute exact path="/musicprofile" component={MusicProfile} />
         <AuthRoute exact path="/artistprofile/:id" component={ArtistProfile} />
+        <Footer />
       </Router>
     </div>
   );

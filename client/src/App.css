@@ -23,10 +23,13 @@
 
 body {
   background-color: var(--background);
+  position: relative;
+  min-height: 100vh;
 }
 
 .body {
   padding-top: 16px !important;
+  padding-bottom: 48px;
 }
 
 h1,
@@ -162,6 +165,14 @@ li.nav-item {
   margin-bottom: 8px;
   padding-left: 8px !important;
   padding-right: 8px !important;
+}
+
+.footer {
+  background-color: var(--primary);
+  padding: 12px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 @media (max-width: 767px) {

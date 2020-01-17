@@ -9,17 +9,12 @@ import {
   MDBCardImage,
   MDBCardTitle,
   MDBCardText,
-  MDBModal,
-  MDBModalBody,
-  MDBModalHeader,
-  MDBModalFooter,
   MDBJumbotron
 } from "mdbreact";
 import SpotifyAPI from "spotify-web-api-js";
 import _ from "lodash";
 
 function TopTracks() {
-  const [openModal, setOpenModal] = useState(false);
   const [tracks, setTracks] = useState(false);
 
   var token = window.localStorage.getItem("spotifyToken");
@@ -44,7 +39,9 @@ function TopTracks() {
       });
     }
   }
-  
+
+  console.log(tracks);
+
   return (
     <div className="body">
       <MDBContainer>

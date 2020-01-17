@@ -58,6 +58,11 @@ function MenuBar() {
                   My Top Tracks
                 </a>
                 </MDBNavItem>
+                <MDBNavItem>
+                <a className="nav-btn" href="/musicprofile">
+                  My Music Profile
+                </a>
+                </MDBNavItem>
               </MDBNavbarNav>
             ) : (
               <MDBNavbarNav right>

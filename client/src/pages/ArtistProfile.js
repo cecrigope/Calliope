@@ -52,41 +52,40 @@ function ArtistProfile() {
           setTopTracksData(topTracks);
           var trackIds = _.map(topTracks.tracks, "id");
 
-          spotify.getAudioFeaturesForTracks(trackIds, function(
-            err,
-            audioFeatures
-          ) {
+          spotify.getAudioFeaturesForTracks(trackIds, function(err, audioData) {
             var audioData = {
-              acousticness:
-                Math.round(_.meanBy(
-                  _.map(audioFeatures.audio_features, "acousticness"),
+              acousticness: Math.round(
+                _.meanBy(
+                  _.map(audioData.audio_features, "acousticness"),
                   x => x
-                ) * 100),
-              danceability:
-                Math.round(_.meanBy(
-                  _.map(audioFeatures.audio_features, "danceability"),
+                ) * 100
+              ),
+              danceability: Math.round(
+                _.meanBy(
+                  _.map(audioData.audio_features, "danceability"),
                   x => x
-                ) * 100),
-              energy:
-                Math.round(_.meanBy(
-                  _.map(audioFeatures.audio_features, "energy"),
+                ) * 100
+              ),
+              energy: Math.round(
+                _.meanBy(_.map(audioData.audio_features, "energy"), x => x) *
+                  100
+              ),
+              instrumentalness: Math.round(
+                _.meanBy(
+                  _.map(audioData.audio_features, "instrumentalness"),
                   x => x
-                ) * 100),
-              instrumentalness:
-                Math.round(_.meanBy(
-                  _.map(audioFeatures.audio_features, "instrumentalness"),
+                ) * 100
+              ),
+              liveness: Math.round(
+                _.meanBy(_.map(audioData.audio_features, "liveness"), x => x) *
+                  100
+              ),
+              speechiness: Math.round(
+                _.meanBy(
+                  _.map(audioData.audio_features, "speechiness"),
                   x => x
-                ) * 100),
-              liveness:
-                Math.round(_.meanBy(
-                  _.map(audioFeatures.audio_features, "liveness"),
-                  x => x
-                ) * 100),
-              speechiness:
-                Math.round(_.meanBy(
-                  _.map(audioFeatures.audio_features, "speechiness"),
-                  x => x
-                ) * 100)
+                ) * 100
+              )
             };
 
             setStats(audioData);
@@ -99,7 +98,7 @@ function ArtistProfile() {
   function handleArtistProfile(artistId) {
     window.location.href = "/artistprofile/" + artistId;
   }
-  
+
   return (
     <div>
       {artistData && lastFMData && topTracksData && stats && (
@@ -121,7 +120,7 @@ function ArtistProfile() {
                   className="white-text body-text"
                   style={{ marginBottom: 16 }}
                 >
-                  Popularity Score: {artistData.popularity} | Followers:{" "}
+                  Popularity Score: {artistData.popularity} / Followers:{" "}
                   {artistData.followers.total
                     .toString()
                     .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
@@ -163,7 +162,9 @@ function ArtistProfile() {
                       </MDBCol>
                       <MDBCol size={6} className="text-center">
                         <MDBJumbotron className="jumbotron-rating z-depth-0">
-                          <h1 className="display-1">{stats.instrumentalness}%</h1>
+                          <h1 className="display-1">
+                            {stats.instrumentalness}%
+                          </h1>
                           <h5>Instrumentalness</h5>
                         </MDBJumbotron>
                       </MDBCol>
