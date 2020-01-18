@@ -2,7 +2,7 @@
 
 ## Getting Started
 ### Spotify API
-- Visit https://developer.spotift.com/
+- Visit https://developer.spotify.com/
 - Go to DASHBOARD and login
 - Click on CREATE A CLIENT ID
 - Fill out the form:
@@ -10,7 +10,7 @@
   - App or Hardware Description: React application to view user's spotify data
   - What are you building? Website
   - Are you developing a commercial integration? No
-  - Acknowledge 
+  - Acknowledge
 - Click on EDIT SETTINGS
   - Add "http://localhost:8888/callback" to the Redirect URIs
   - Save
