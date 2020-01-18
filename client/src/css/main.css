@@ -1,0 +1,53 @@
+:root {
+  --primary: rgb(240, 0, 140);
+  --primary-overlay: rgba(240, 0, 140, 0.6)
+}
+
+@font-face {
+  font-family: "heading-font";
+  src: url(./neon.ttf);
+}
+
+@font-face {
+  font-family: "body-font";
+  src: url(./SanFranciscoRegular.ttf);
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "heading-font";
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+body {
+  font-family: "body-font";
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.hover\:bg-primary:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.border-primary {
+  border-color: var(--primary);
+}
+
+.bg-home {
+  background-image: url("../images/bg-home.jpg");
+  background-attachment: fixed;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.text-10xl {
+  font-size: 10rem;
+}
