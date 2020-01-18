@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Spotify web API project",
   "main": "index.js",
+  "engines": {
+    "node": "12.13.0"
+  },
   "scripts": {
     "client:install": "cd client && yarn",
     "client": "cd client && yarn start",
