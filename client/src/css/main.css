@@ -1,6 +1,6 @@
 :root {
-  --primary: rgb(248, 24, 148);
-  --primary-overlay: rgba(248, 24, 148, 0.6);
+  --primary: rgb(255, 24, 148);
+  --primary-overlay: rgba(255, 24, 148, 0.6);
   /* --primary: rgb(255, 72, 32);
   --primary-overlay: rgba(255, 72, 32, 0.6); */
   /* --primary: rgb(32, 215, 255);
