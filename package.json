@@ -16,6 +16,7 @@
     "url": "git+https://github.com/cecrigope/calliope.git"
   },
   "dependencies": {
+    "@reach/router": "^1.2.1",
     "connect-history-api-fallback": "^1.6.0",
     "cookie-parser": "1.4.4",
     "cors": "^2.8.5",
