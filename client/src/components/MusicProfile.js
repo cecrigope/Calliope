@@ -11,7 +11,7 @@ class MusicProfile extends Component {
     topArtists: null,
     topTracks: null,
     artistNumber: 10,
-    trackNumber: 50
+    trackNumber: 10
   };
 
   componentDidMount() {
@@ -110,7 +110,7 @@ class MusicProfile extends Component {
                           .map((artist, i) => (
                             <div className="w-full my-4" key={i}>
                               <div className="flex flex-wrap">
-                                <div className="w-1/4 md:w-2/12 flex">
+                                <div className="w-3/4 md:w-3/12 lg:w-2/12 flex">
                                   <div className="self-center">
                                     <img
                                       className="rounded-full rounded-custom border border-accent-1"
@@ -118,7 +118,7 @@ class MusicProfile extends Component {
                                     />
                                   </div>
                                 </div>
-                                <div className="w-3/4 md:w-10/12 pl-4 text-white flex">
+                                <div className="w-3/4 md:w-9/12 lg:w-10/12 pl-4 text-white flex">
                                   <div className="self-center">
                                     <h4 className="text-2xl text-accent-1">
                                       {artist.name}
@@ -165,7 +165,7 @@ class MusicProfile extends Component {
                           .map((track, i) => (
                             <div className="w-full my-4" key={i}>
                               <div className="flex">
-                                <div className="w-1/4 md:w-2/12 flex">
+                                <div className="w-1/4 md:w-3/12 lg:w-2/12 flex">
                                   <div className="self-center">
                                     <img
                                       className="rounded-full rounded-custom border border-accent-2"
@@ -173,7 +173,7 @@ class MusicProfile extends Component {
                                     />
                                   </div>
                                 </div>
-                                <div className="w-3/4 md:w-10/12 pl-4 text-white flex" style={{display: "table"}}>
+                                <div className="w-3/4 md:w-9/12 lg:w-10/12 pl-4 text-white flex" style={{display: "table"}}>
                                   <div className="self-center">
                                     <h4 className="text-2xl text-accent-2 overflow-custom">
                                       {track.name}
