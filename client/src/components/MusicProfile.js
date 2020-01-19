@@ -109,8 +109,8 @@ class MusicProfile extends Component {
                           .slice(0, artistNumber)
                           .map((artist, i) => (
                             <div className="w-full my-4" key={i}>
-                              <div className="flex flex-wrap">
-                                <div className="w-3/4 md:w-3/12 lg:w-2/12 flex">
+                              <div className="flex">
+                                <div className="w-1/4 md:w-3/12 lg:w-2/12 flex">
                                   <div className="self-center">
                                     <img
                                       className="rounded-full rounded-custom border border-accent-1"
@@ -209,10 +209,10 @@ class MusicProfile extends Component {
           </div>
         </div>
         <div
-          class="fixed bottom-0 right-0 m-4 p-2 rounded rounded-lg bg-gray-600"
+          className="fixed bottom-0 right-0 m-3 py-1 px-2 rounded rounded-lg bg-gray-600 border border-gray-600"
           onClick={() => this.scrollToTop()}
         >
-          <p className="uppercase text-white text-sm">Return to Top</p>
+          <p className="uppercase text-white text-xs">Return to Top</p>
         </div>
       </div>
     );
