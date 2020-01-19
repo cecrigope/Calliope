@@ -1,12 +1,12 @@
 :root {
   --primary: rgb(255, 0, 102);
   --primary-overlay: rgba(255, 0, 102, 0.6);
-  --accent-1: rgb(0, 204, 204);
-  --accent-1-overlay: rgba(0, 204, 204, 0.6);
-  --accent-2: rgb(25, 227, 177);
-  --accent-2-overlay: rgba(25, 227, 177, 0.6);
+  --accent-1: rgb(11, 214, 247);
+  --accent-1-overlay: rgba(11, 214, 247, 0.6);
+  --accent-2: rgb(111, 224, 42);
+  --accent-2-overlay: rgba(111, 224, 42, 0.6);
   --background: rgb(29, 38, 47);
-  --header: rgb(34, 44, 55);
+  --header: rgb(34, 49, 65);
 }
 
 @font-face {
@@ -19,7 +19,20 @@
   src: url(./SanFranciscoRegular.ttf);
 }
 
-h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5 {
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
   font-family: "heading-font";
   text-transform: uppercase;
   line-height: 1;
@@ -45,9 +58,27 @@ body {
   background-color: var(--primary);
 }
 
+.bg-accent-1 {
+  background-color: var(--accent-1);
+}
+
+.bg-accent-2 {
+  background-color: var(--accent-2);
+}
+
 .hover\:bg-primary:hover {
   background-color: var(--primary);
   border-color: var(--primary);
+}
+
+.hover\:bg-accent-1:hover {
+  background-color: var(--accent-1);
+  border-color: var(--accent-1);
+}
+
+.hover\:bg-accent-2:hover {
+  background-color: var(--accent-2);
+  border-color: var(--accent-2);
 }
 
 .border-primary {
@@ -72,7 +103,8 @@ body {
   display: flex;
 }
 
-.header, .bg-card {
+.header,
+.bg-card {
   background-color: var(--header);
 }
 
@@ -89,4 +121,20 @@ body {
   object-fit: cover;
   width: 100%;
   height: 360px;
+}
+
+button:focus,
+button:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
+.overflow-custom {
+  word-break: break-word;
+}
+
+.rounded-custom {
+  object-fit: cover;
+  width: 6rem;
+  height: 6rem;
 }

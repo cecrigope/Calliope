@@ -9,10 +9,10 @@ const HomePage = () => (
     <div className="container mx-auto">
       <div className="flex flex-wrap">
         <div className="w-full text-center">
-          <h1 className="text-primary text-7xl mb-8">Calliope</h1>
+          <h1 className="text-primary mb-8 text-5xl md:text-6xl">Calliope</h1>
           <a
             href={LOGIN_URI}
-            class="bg-transparent hover:bg-primary text-primary hover:text-white border border-primary py-2 px-6 rounded-lg text-2xl uppercase"
+            className="bg-transparent hover:bg-primary text-primary hover:text-white border border-primary py-2 px-6 rounded-lg text-2xl uppercase"
           >
             Log In to Spotify
           </a>
