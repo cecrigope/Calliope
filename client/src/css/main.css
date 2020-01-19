@@ -1,12 +1,12 @@
 :root {
-  --primary: rgb(255, 24, 148);
-  --primary-overlay: rgba(255, 24, 148, 0.6);
-  /* --primary: rgb(255, 72, 32);
-  --primary-overlay: rgba(255, 72, 32, 0.6); */
-  /* --primary: rgb(32, 215, 255);
-  --primary-overlay: rgba(32, 215, 255, 0.6); */
-  /* --primary: rgb(56, 255, 32);
-  --primary-overlay: rgba(56, 255, 32, 0.6); */
+  --primary: rgb(255, 0, 102);
+  --primary-overlay: rgba(255, 0, 102, 0.6);
+  --accent-1: rgb(0, 204, 204);
+  --accent-1-overlay: rgba(0, 204, 204, 0.6);
+  --accent-2: rgb(25, 227, 177);
+  --accent-2-overlay: rgba(25, 227, 177, 0.6);
+  --background: rgb(29, 38, 47);
+  --header: rgb(34, 44, 55);
 }
 
 @font-face {
@@ -19,7 +19,7 @@
   src: url(./SanFranciscoRegular.ttf);
 }
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5 {
   font-family: "heading-font";
   text-transform: uppercase;
   line-height: 1;
@@ -31,6 +31,14 @@ body {
 
 .text-primary {
   color: var(--primary);
+}
+
+.text-accent-1 {
+  color: var(--accent-1);
+}
+
+.text-accent-2 {
+  color: var(--accent-2);
 }
 
 .bg-primary {
@@ -46,6 +54,14 @@ body {
   border-color: var(--primary);
 }
 
+.border-accent-1 {
+  border-color: var(--accent-1);
+}
+
+.border-accent-2 {
+  border-color: var(--accent-2);
+}
+
 .text-7xl {
   font-size: 7rem;
 }
@@ -57,7 +73,7 @@ body {
 }
 
 .header, .bg-card {
-  background-color: RGB(30, 50, 70);
+  background-color: var(--header);
 }
 
 .footer {
@@ -65,7 +81,8 @@ body {
 }
 
 .bg-dark {
-  background-color: RGB(18, 27, 36);
+  background-color: var(--background);
+  min-height: calc(100vh - 51.5px - 40px);
 }
 
 .artist-img {

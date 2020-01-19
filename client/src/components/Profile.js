@@ -3,15 +3,13 @@ import { Router } from "@reach/router";
 
 import Header from "./Header";
 import Footer from "./Footer";
-import TopArtists from "./TopArtists";
-import TopTracks from "./TopTracks";
+import MusicProfile from "./MusicProfile";
 
 const Profile = () => (
   <div>
     <Header />
     <Router primary={false}>
-      <TopArtists path="/" />
-      <TopTracks path="/toptracks" />
+      <MusicProfile path="/" />
     </Router>
     <Footer/>
   </div>
