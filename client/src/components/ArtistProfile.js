@@ -128,7 +128,9 @@ class ArtistProfile extends Component {
             fontColor: "rgba(255, 255, 255, 1)",
             backdropColor: "rgba(29, 38, 47, 1)",
             fontFamily: "body-font",
-            fontSize: 14
+            fontSize: 12,
+            min: 0,
+            max: 100
           }
         },
         legend: {
@@ -144,7 +146,6 @@ class ArtistProfile extends Component {
     console.log(stats);
 
     return (
-
       <div className="bg-dark static">
         {artist && topTracks ? (
           <div>
@@ -175,36 +176,6 @@ class ArtistProfile extends Component {
             </div>
             <div className="container mx-auto pt-5 pb-8">
               <div className="flex flex-wrap mx-1">
-                <div className="w-full md:w-2/3 pr-0 md:pr-5">
-                  <h2 className="text-primary text-5xl mb-2">Biography</h2>
-                  <p className="text-white mb-4">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nulla pharetra nisi id enim interdum vulputate. Vestibulum
-                    vulputate ultrices enim et consequat. Praesent consectetur
-                    ultrices lacus, ut porttitor nunc accumsan non. Nulla
-                    aliquam ultrices mi eu lacinia. Duis tristique, sem quis
-                    luctus porta, tellus lorem venenatis sem, non volutpat nisi
-                    orci mattis erat. Suspendisse vel malesuada metus.
-                    Suspendisse consectetur, nunc sit amet suscipit dignissim,
-                    ligula tortor euismod lacus, sed mattis nisl lacus id augue.
-                    Quisque id mauris ut odio tempor ornare. Nulla interdum
-                    posuere venenatis. Vestibulum tempor dapibus nisi, vitae
-                    imperdiet felis vulputate sed. Sed finibus metus bibendum
-                    orci dignissim, vitae semper urna sagittis.Donec lacinia
-                    porttitor dui, ac rhoncus augue fringilla eget. Cras
-                    placerat et metus at sagittis. Curabitur magna velit,
-                    fringilla eu sodales euismod, elementum quis orci. Aliquam
-                    non libero convallis, eleifend lectus sed, vestibulum risus.
-                    Integer a nisi in arcu suscipit scelerisque non eu ligula.
-                    Nunc iaculis viverra nunc quis aliquet. Quisque dignissim
-                    posuere erat a lobortis. Quisque ut sodales sapien. Maecenas
-                    posuere sit amet massa sed elementum. Duis blandit, augue ut
-                    semper commodo, orci ex convallis magna, aliquam efficitur
-                    tortor nulla non nisi.
-                  </p>
-                  <h2 className="text-primary text-5xl mb-2">Statistics</h2>
-                  <canvas id="myChart" width="400" height="400"></canvas>
-                </div>
                 <div className="w-full md:w-1/3">
                   <h2 className="text-primary text-5xl mb-2">Genres</h2>
                   <div className="mb-4">
@@ -250,6 +221,36 @@ class ArtistProfile extends Component {
                       </div>
                     ))}
                   </div>
+                </div>
+                <div className="w-full md:w-2/3 pr-0 md:pr-5">
+                  <h2 className="text-primary text-5xl mb-2">Biography</h2>
+                  <p className="text-white mb-4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nulla pharetra nisi id enim interdum vulputate. Vestibulum
+                    vulputate ultrices enim et consequat. Praesent consectetur
+                    ultrices lacus, ut porttitor nunc accumsan non. Nulla
+                    aliquam ultrices mi eu lacinia. Duis tristique, sem quis
+                    luctus porta, tellus lorem venenatis sem, non volutpat nisi
+                    orci mattis erat. Suspendisse vel malesuada metus.
+                    Suspendisse consectetur, nunc sit amet suscipit dignissim,
+                    ligula tortor euismod lacus, sed mattis nisl lacus id augue.
+                    Quisque id mauris ut odio tempor ornare. Nulla interdum
+                    posuere venenatis. Vestibulum tempor dapibus nisi, vitae
+                    imperdiet felis vulputate sed. Sed finibus metus bibendum
+                    orci dignissim, vitae semper urna sagittis.Donec lacinia
+                    porttitor dui, ac rhoncus augue fringilla eget. Cras
+                    placerat et metus at sagittis. Curabitur magna velit,
+                    fringilla eu sodales euismod, elementum quis orci. Aliquam
+                    non libero convallis, eleifend lectus sed, vestibulum risus.
+                    Integer a nisi in arcu suscipit scelerisque non eu ligula.
+                    Nunc iaculis viverra nunc quis aliquet. Quisque dignissim
+                    posuere erat a lobortis. Quisque ut sodales sapien. Maecenas
+                    posuere sit amet massa sed elementum. Duis blandit, augue ut
+                    semper commodo, orci ex convallis magna, aliquam efficitur
+                    tortor nulla non nisi.
+                  </p>
+                  <h2 className="text-primary text-5xl mb-2">Statistics</h2>
+                  <canvas id="myChart" width="400" height="400"></canvas>
                 </div>
               </div>
             </div>
