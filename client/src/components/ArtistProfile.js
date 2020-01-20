@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import _ from "lodash";
+import Chart from "chart.js";
 
 import {
   getArtist,
@@ -40,7 +41,6 @@ class ArtistProfile extends Component {
     var trackIds = _.map(data.tracks, "id");
 
     const audioFeatures = await getAudioFeaturesForTracks(trackIds);
-    console.log(audioFeatures.data.audio_features);
 
     var audioData = {
       acousticness: Math.round(
@@ -78,12 +78,73 @@ class ArtistProfile extends Component {
     };
 
     this.setState({ stats: audioData });
+    this.createRadar(audioData);
   }
+
+  createRadar = stats => {
+    var ctx = document.getElementById("myChart");
+    var myChart = new Chart(ctx, {
+      type: "radar",
+      data: {
+        labels: [
+          "Acousticness",
+          "Danceability",
+          "Energy",
+          "Instrumentalness",
+          "Liveness",
+          "Speechiness"
+        ],
+        datasets: [
+          {
+            data: [
+              stats.acousticness,
+              stats.danceability,
+              stats.energy,
+              stats.instrumentalness,
+              stats.liveness,
+              stats.speechiness
+            ],
+            fill: true,
+            backgroundColor: "rgba(255, 0, 102, 0.25)",
+            borderColor: "rgba(255, 0, 102, 1)",
+            borderWidth: 3
+          }
+        ]
+      },
+      options: {
+        scale: {
+          gridLines: {
+            color: "rgba(255, 255, 255, 1)"
+          },
+          angleLines: {
+            color: "rgba(255, 255, 255, 1)"
+          },
+          pointLabels: {
+            fontColor: "rgba(255, 255, 255, 1)",
+            fontFamily: "body-font",
+            fontSize: 14
+          },
+          ticks: {
+            fontColor: "rgba(255, 255, 255, 1)",
+            backdropColor: "rgba(29, 38, 47, 1)",
+            fontFamily: "body-font",
+            fontSize: 14
+          }
+        },
+        legend: {
+          display: false
+        }
+      }
+    });
+  };
 
   render() {
     const { artist, topTracks, stats } = this.state;
 
+    console.log(stats);
+
     return (
+
       <div className="bg-dark static">
         {artist && topTracks ? (
           <div>
@@ -142,6 +203,7 @@ class ArtistProfile extends Component {
                     tortor nulla non nisi.
                   </p>
                   <h2 className="text-primary text-5xl mb-2">Statistics</h2>
+                  <canvas id="myChart" width="400" height="400"></canvas>
                 </div>
                 <div className="w-full md:w-1/3">
                   <h2 className="text-primary text-5xl mb-2">Genres</h2>
