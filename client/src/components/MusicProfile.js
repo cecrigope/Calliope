@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import { getUserInfo, logout } from "../spotify";
 import { catchErrors } from "../utils";
 
+import info from "../images/info.png";
+
 class MusicProfile extends Component {
   state = {
     user: null,
@@ -56,6 +58,7 @@ class MusicProfile extends Component {
 
   showArtists = boolVal => catchErrors(this.showMoreArtists(boolVal));
   showTracks = boolVal => catchErrors(this.showMoreTracks(boolVal));
+
   scrollToTop = () => catchErrors(this.getToTop());
 
   render() {
@@ -87,12 +90,12 @@ class MusicProfile extends Component {
                 <div className="flex flex-wrap mx-3">
                   <div className="w-full md:w-1/2 mb-4">
                     <div className="flex flex-wrap">
-                      <div className="w-1/2">
+                      <div className="w-3/4 md:w-1/2">
                         <h3 className="text-3xl text-accent-1">
                           My Top {artistNumber} Artists
                         </h3>
                       </div>
-                      <div className="w-1/2">
+                      <div className="w-1/4 md:w-1/2">
                         <button
                           className="bg-transparent hover:bg-accent-1 text-accent-1 hover:text-white border border-accent-1 py-1 px-2 rounded-lg text-xs uppercase float-right md:mr-4"
                           onClick={() =>
@@ -109,45 +112,52 @@ class MusicProfile extends Component {
                           .slice(0, artistNumber)
                           .map((artist, i) => (
                             <div className="w-full my-4" key={i}>
-                              <div className="flex">
-                                <div className="w-1/4 md:w-3/12 lg:w-2/12 flex">
-                                  <div className="self-center">
-                                    <img
-                                      className="rounded-full rounded-custom border border-accent-1"
-                                      src={artist.images[0].url}
-                                    />
+                              <a href={"/artist/" + artist.id}>
+                                <div className="flex">
+                                  <div className="w-1/4 md:w-3/12 lg:w-2/12 flex">
+                                    <div className="self-center">
+                                      <img
+                                        className="rounded-full rounded-custom border border-accent-1"
+                                        src={artist.images[0].url}
+                                      />
+                                    </div>
+                                  </div>
+                                  <div className="w-3/4 md:w-9/12 lg:w-10/12 pl-4 text-white flex">
+                                    <div className="self-center">
+                                      <h4 className="text-2xl text-accent-1 overflow-custom">
+                                        {artist.name}
+                                      </h4>
+                                      <p>
+                                        Popularity Score: {artist.popularity}
+                                      </p>
+                                      <p>
+                                        Followers:{" "}
+                                        {artist.followers.total
+                                          .toString()
+                                          .replace(
+                                            /\B(?=(\d{3})+(?!\d))/g,
+                                            ","
+                                          )}
+                                      </p>
+                                    </div>
                                   </div>
                                 </div>
-                                <div className="w-3/4 md:w-9/12 lg:w-10/12 pl-4 text-white flex">
-                                  <div className="self-center">
-                                    <h4 className="text-2xl text-accent-1">
-                                      {artist.name}
-                                    </h4>
-                                    <p>Popularity Score: {artist.popularity}</p>
-                                    <p>
-                                      Followers:{" "}
-                                      {artist.followers.total
-                                        .toString()
-                                        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-                                    </p>
-                                  </div>
-                                </div>
-                              </div>
+                              </a>
                             </div>
                           ))}
                       </div>
                     ) : (
-                      <p>Nothing</p>
+                      <p className="text-white">Nothing</p>
                     )}
                   </div>
                   <div className="w-full md:w-1/2 mb-4">
                     <div className="flex flex-wrap">
-                      <div className="w-1/2">
+                      <div className="w-3/4 md: w-1/2">
                         <h3 className="text-3xl text-accent-2">
                           My Top {trackNumber} Tracks
                         </h3>
                       </div>
-                      <div className="w-1/2">
+                      <div className="w-1/4 md: w-1/2">
                         <button
                           className="bg-transparent hover:bg-accent-2 text-accent-2 hover:text-white border border-accent-2 py-1 px-2 rounded-lg text-xs uppercase float-right md:mr-4"
                           onClick={() =>
@@ -173,7 +183,7 @@ class MusicProfile extends Component {
                                     />
                                   </div>
                                 </div>
-                                <div className="w-3/4 md:w-9/12 lg:w-10/12 pl-4 text-white flex" style={{display: "table"}}>
+                                <div className="w-3/4 md:w-9/12 lg:w-10/12 pl-4 text-white flex">
                                   <div className="self-center">
                                     <h4 className="text-2xl text-accent-2 overflow-custom">
                                       {track.name}
@@ -198,13 +208,13 @@ class MusicProfile extends Component {
                           ))}
                       </div>
                     ) : (
-                      <p>Nothing</p>
+                      <p className="text-white">Nothing</p>
                     )}
                   </div>
                 </div>
               </div>
             ) : (
-              <p>Nothing</p>
+              <p className="text-white">Nothing</p>
             )}
           </div>
         </div>

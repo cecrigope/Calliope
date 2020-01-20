@@ -93,6 +93,24 @@ body {
   border-color: var(--accent-2);
 }
 
+.overlay-primary {
+  background-color: var(--primary-overlay);
+  height: 30rem;
+  width: 100%;
+}
+
+.overlay-accent-1 {
+  background-color: var(--accent-1-overlay);
+  height: 30rem;
+  width: 100%;
+}
+
+.overlay-accent-2 {
+  background-color: var(--accent-2-overlay);
+  height: 30rem;
+  width: 100%;
+}
+
 .text-7xl {
   font-size: 7rem;
 }
@@ -117,12 +135,6 @@ body {
   min-height: calc(100vh - 51.5px - 40px);
 }
 
-.artist-img {
-  object-fit: cover;
-  width: 100%;
-  height: 360px;
-}
-
 button:focus,
 button:active {
   outline: none !important;
@@ -137,4 +149,8 @@ button:active {
   object-fit: cover;
   width: 6rem;
   height: 6rem;
+}
+
+.artist-img {
+  /* height: 30rem; */
 }
