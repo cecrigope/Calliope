@@ -176,7 +176,7 @@ class ArtistProfile extends Component {
             </div>
             <div className="container mx-auto pt-5 pb-8">
               <div className="flex flex-wrap mx-1">
-                <div className="w-full md:w-1/3">
+                <div className="w-full md:w-1/3 pr-0 md:pr-5">
                   <h2 className="text-primary text-5xl mb-2">Genres</h2>
                   <div className="mb-4">
                     {artist.genres.map((genre, i) => (
@@ -222,7 +222,7 @@ class ArtistProfile extends Component {
                     ))}
                   </div>
                 </div>
-                <div className="w-full md:w-2/3 pr-0 md:pr-5">
+                <div className="w-full md:w-2/3">
                   <h2 className="text-primary text-5xl mb-2">Biography</h2>
                   <p className="text-white mb-4">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.

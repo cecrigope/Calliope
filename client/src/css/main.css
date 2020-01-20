@@ -1,10 +1,10 @@
 :root {
   --primary: rgb(255, 0, 102);
-  --primary-overlay: rgba(255, 0, 102, 0.6);
+  --primary-overlay: rgba(255, 0, 102, 0.5);
   --accent-1: rgb(11, 214, 247);
-  --accent-1-overlay: rgba(11, 214, 247, 0.6);
+  --accent-1-overlay: rgba(11, 214, 247, 0.5);
   --accent-2: rgb(111, 224, 42);
-  --accent-2-overlay: rgba(111, 224, 42, 0.6);
+  --accent-2-overlay: rgba(111, 224, 42, 0.5);
   --background: rgb(29, 38, 47);
   --header: rgb(34, 49, 65);
 }
